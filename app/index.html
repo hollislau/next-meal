@@ -1,50 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Next Meal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Josefin+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="main.css">
-</head>
-<body data-ng-app="nextMeal">
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Next Meal</title>
+    <meta name="description" content="Information about local meal resources">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body data-ng-app="nextMeal">
 
-<header class="nav_wrapper">
-<img src="images/Next-Meal-logo-50.svg" class="logo_lg logo_sm"></img>
-  <nav>
-    <a href="#/" id="menu-icon"></a>
-    <ul>
-      <li><a data-ng-href="#/">home</a></li>
-      <li><a data-ng-href="#/about">about</a></li>
-      <li><a data-ng-href="#/">contact</a></li>
-      <li><a class="submenu_li" data-ng-href="#/">organizations</a>
+    <header class="nav_wrapper">
+      <h1 class="hidden">Next Meal</h1>
+      <img src="images/Next-Meal-logo-50.svg" class="logo_lg logo_sm" alt="Next Meal logo"></img>
+      <nav>
+        <a href="#/" id="menu-icon"></a>
         <ul>
-          <li><a class="submenu_li" href="#/signin">log in</a></li>
-          <li><a class="submenu_li" href="#/signup">sign up</a></li>
+          <li><a data-ng-href="#/">home</a></li>
+          <li><a data-ng-href="#/about">about</a></li>
+          <li><a data-ng-href="#/">contact</a></li>
+          <li><a class="submenu_li" data-ng-href="#/">organizations</a>
+            <ul>
+              <li><a class="submenu_li" href="#/signin">log in</a></li>
+              <li><a class="submenu_li" href="#/signup">sign up</a></li>
+            </ul>
+          </li>
+          <li><a class="donate" data-ng-href="#/">donate</a></li>
         </ul>
-      </li>
-      <li><a class="donate" data-ng-href="#/">donate</a></li>
-    </ul>
-  </nav>
-</header>
+      </nav>
+    </header>
 
-<main data-ng-view></main>
+    <main data-ng-view></main>
 
-<footer>
-  <ul>
-    <li class="logo_footer">
-      <img src="images/Next-Meal-logo-50.svg" alt="logo">
-    </li>
-    <li class="site_map">
+    <footer>
+      <img src="images/Next-Meal-logo-50.svg" alt="Next Meal logo">
       <div>
         <p>Site Map</p>
         <p>or</p>
-        <p>Contact Information</p>        
+        <p>Contact Information</p>
       </div>
-    </li>
-  </ul>
-</footer>
+      <!-- <ul>
+        <li class="logo_footer">
+          <img src="images/Next-Meal-logo-50.svg" alt="logo">
+        </li>
+        <li class="site_map">
+          <div>
+            <p>Site Map</p>
+            <p>or</p>
+            <p>Contact Information</p>
+          </div>
+        </li>
+      </ul> -->
+    </footer>
 
-  <script src="bundle.js"></script>
-</body>
+    <script src="bundle.js"></script>
+  </body>
 </html>
