@@ -1,58 +1,63 @@
+<h1 class="hidden">Next Meal</h1>
+<!-- <section class="welcome"> -->
 <div data-ng-controller="AuthController as globalAuth" class="login_status">
-  <p data-ng-init="globalAuth.getOrganizationName()">Welcome, <span ng-show="globalAuth.isLoggedIn()">{{globalAuth.organizationName}}</span><span ng-show="!globalAuth.isLoggedIn()">Guest</span>
-    <a href data-ng-click="globalAuth.logout()">Logout</a></p>
-</div>
-<section class="welcome">
   <div>
     <p class="typed">text... locate... eat...</p>
     <p class="typed">Next Meal</p>
   </div>
-</section>
-<section>
-  <section class="location">
-    <ul>
-      <li>
-        <p>Find A Location</p>
-      </li>
-      <li>
-        <button type="button" class="find_btn" data-ng-click="locctrl.getAll()" data-ng-buttonText="Find" data-ng-if="!locctrl.results">Find</button>
-        <button type="button" class="reset_btn" data-ng-click="locctrl.results=false; locctrl.reset()" data-ng-buttonText="Find" data-ng-if="locctrl.results">Reset</button>
-      </li>
-      <li data-ng-if="locctrl.results">
-        <input type="text" placeholder="Search" data-ng-model="locctrl.searchText">
-      </li>
-    </ul>
-  </section>
-
-  <section class="map" data-ng-if="!locctrl.results">
+  <p data-ng-init="globalAuth.getOrganizationName()">Welcome,
+    <span ng-show="globalAuth.isLoggedIn()">{{globalAuth.organizationName}}</span>
+    <span ng-show="!globalAuth.isLoggedIn()">Guest</span>
+  </p>
+  <a href data-ng-click="globalAuth.logout()">Logout</a>
+  <!-- <a href data-ng-click="globalAuth.logout()">Logout</a></p> -->
+</div>
+<!-- </section> -->
+<!-- <section> -->
+<section class="location">
+  <!-- <ul> -->
+    <!-- <li> -->
+  <h2>Find A Location</h2>
+    <!-- </li> -->
+    <!-- <li> -->
+  <button type="button" class="find_btn" data-ng-click="locctrl.getAll()" data-ng-buttonText="Find" data-ng-if="!locctrl.results">Find</button>
+  <button type="button" class="reset_btn" data-ng-click="locctrl.results=false; locctrl.reset()" data-ng-buttonText="Find" data-ng-if="locctrl.results">Reset</button>
+    <!-- </li> -->
+    <!-- <li data-ng-if="locctrl.results"> -->
+  <input data-ng-if="locctrl.results" type="text" placeholder="Search" data-ng-model="locctrl.searchText">
+    <!-- </li> -->
+  <!-- </ul> -->
+  <!-- <section class="map" data-ng-if="!locctrl.results"> -->
+  <ui-gmap-google-map
+    class="map"
+    data-ng-if="!locctrl.results"
+    center="locctrl.map.center"
+    zoom="locctrl.map.zoom"
+    options="locctrl.options">
+  </ui-gmap-google-map>
+  <!-- </section> -->
+  <!-- <section class="results" data-ng-if="locctrl.results"> -->
+  <div class="location_list_wrapper" data-ng-if="locctrl.results">
+    <ul class="location_list location_list_wrapper">
+      <locations-list
+        data-ng-repeat="location in locctrl.locations | filter: locctrl.searchText"
+        data-location="location"
+        data-buttonText="reset">
+      </locations-list>
+    <!-- </ul> -->
     <ui-gmap-google-map
+      class="location_list_map"
       center="locctrl.map.center"
       zoom="locctrl.map.zoom"
       options="locctrl.options">
+      <ui-gmap-markers
+        models="locctrl.markers"
+        coords="'self'"
+        icon="'icon'"
+        options="'options'">
+      </ui-gmap-markers>
     </ui-gmap-google-map>
-  </section>
-
-  <section class="results" data-ng-if="locctrl.results">
-    <div class="location_list_wrapper">
-      <ul class="location_list">
-        <locations-list
-          data-ng-repeat="location in locctrl.locations | filter: locctrl.searchText"
-          data-location="location"
-          data-buttonText="reset">
-        </locations-list>
-      </ul>
-      <ui-gmap-google-map
-        class="location_list_map"
-        center="locctrl.map.center"
-        zoom="locctrl.map.zoom"
-        options="locctrl.options">
-        <ui-gmap-markers
-          models="locctrl.markers"
-          coords="'self'"
-          icon="'icon'"
-          options="'options'">
-        </ui-gmap-markers>
-      </ui-gmap-google-map>
-    </div>
-  </section>
+  </div>
+<!-- </section> -->
 </section>
+<!-- </section> -->
