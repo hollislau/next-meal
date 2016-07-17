@@ -1,9 +1,9 @@
-<h1 class="hidden">Next Meal</h1>
+<!-- <h1 class="hidden">Next Meal</h1> -->
 <!-- <section class="welcome"> -->
-<div data-ng-controller="AuthController as globalAuth" class="login_status">
+<div data-ng-controller="AuthController as globalAuth" class="login_status welcome">
   <div>
     <p class="typed">text... locate... eat...</p>
-    <p class="typed">Next Meal</p>
+    <h1 class="typed">Next Meal</h1>
   </div>
   <p data-ng-init="globalAuth.getOrganizationName()">Welcome,
     <span ng-show="globalAuth.isLoggedIn()">{{globalAuth.organizationName}}</span>
@@ -20,11 +20,27 @@
   <h2>Find A Location</h2>
     <!-- </li> -->
     <!-- <li> -->
-  <button type="button" class="find_btn" data-ng-click="locctrl.getAll()" data-ng-buttonText="Find" data-ng-if="!locctrl.results">Find</button>
-  <button type="button" class="reset_btn" data-ng-click="locctrl.results=false; locctrl.reset()" data-ng-buttonText="Find" data-ng-if="locctrl.results">Reset</button>
+  <button
+    type="button"
+    class="find_btn"
+    data-ng-click="locctrl.getAll()"
+    data-ng-buttonText="Find"
+    data-ng-if="!locctrl.results">Find
+  </button>
+  <button
+    type="button"
+    class="reset_btn"
+    data-ng-click="locctrl.results=false; locctrl.reset()"
+    data-ng-buttonText="Find"
+    data-ng-if="locctrl.results">Reset
+  </button>
     <!-- </li> -->
     <!-- <li data-ng-if="locctrl.results"> -->
-  <input data-ng-if="locctrl.results" type="text" placeholder="Search" data-ng-model="locctrl.searchText">
+  <input
+    type="text"
+    placeholder="Search"
+    data-ng-if="locctrl.results"
+    data-ng-model="locctrl.searchText">
     <!-- </li> -->
   <!-- </ul> -->
   <!-- <section class="map" data-ng-if="!locctrl.results"> -->
