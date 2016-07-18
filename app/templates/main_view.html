@@ -1,6 +1,6 @@
 <!-- <h1 class="hidden">Next Meal</h1> -->
 <!-- <section class="welcome"> -->
-<div data-ng-controller="AuthController as globalAuth" class="login_status welcome">
+<div data-ng-controller="AuthController as globalAuth" class="login-status welcome">
   <div>
     <p class="typed">text... locate... eat...</p>
     <h1 class="typed">Next Meal</h1>
@@ -22,14 +22,14 @@
     <!-- <li> -->
   <button
     type="button"
-    class="find_btn"
+    class="find-btn"
     data-ng-click="locctrl.getAll()"
     data-ng-buttonText="Find"
     data-ng-if="!locctrl.results">Find
   </button>
   <button
     type="button"
-    class="reset_btn"
+    class="reset-btn"
     data-ng-click="locctrl.results=false; locctrl.reset()"
     data-ng-buttonText="Find"
     data-ng-if="locctrl.results">Reset
@@ -53,8 +53,8 @@
   </ui-gmap-google-map>
   <!-- </section> -->
   <!-- <section class="results" data-ng-if="locctrl.results"> -->
-  <div class="location_list_wrapper" data-ng-if="locctrl.results">
-    <ul class="location_list location_list_wrapper">
+  <div class="location-list-wrapper" data-ng-if="locctrl.results">
+    <ul class="location-list location-list-wrapper">
       <locations-list
         data-ng-repeat="location in locctrl.locations | filter: locctrl.searchText"
         data-location="location"
@@ -62,7 +62,7 @@
       </locations-list>
     <!-- </ul> -->
     <ui-gmap-google-map
-      class="location_list_map"
+      class="location-list-map"
       center="locctrl.map.center"
       zoom="locctrl.map.zoom"
       options="locctrl.options">
