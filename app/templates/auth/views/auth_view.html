@@ -1,26 +1,28 @@
-<div data-ng-controller="AuthController as globalAuth" class="login_status">
+<!-- <div data-ng-controller="AuthController as globalAuth" class="login-status">
   <p data-ng-init="globalAuth.getOrganizationName()">Welcome, <span ng-show="globalAuth.isLoggedIn()">{{globalAuth.organizationName}}</span><span ng-show="!globalAuth.isLoggedIn()">Guest</span>
     <a href data-ng-click="globalAuth.logout()">Logout</a></p>
-</div>
+</div> -->
 
-<div class="auth_wrapper">
-  <section>
-    <form name="authform" data-ng-submit="authctrl.authenticate(authctrl.organization)" class="form_green">
-      <h1>{{authctrl.signup ? 'Create A New Organization':'Sign in to existing Organization'}}</h1>
-      <a data-ng-href="/#/{{authctrl.signup? 'signin':'signup'}}">{{(authctrl.signup ? 'Or Sign into an exisiting Organization':'Or Create a New Organization')}}</a>
-      <label>
-        <span>Name:</span>
-        <input type="text" required data-ng-model="authctrl.organization.organizationName">
-      </label>
-      <label>
-        <span>Password:</span>
-        <input type="password" required data-ng-model="authctrl.organization.password">
-      </label>
-      <label data-ng-if="authctrl.signup" for="confirmation">
-        <span>Confirmation:</span>
-        <input data-ng-if="authctrl.signup" required type="password" data-ng-model="authctrl.organization.confirmation">
-      </label>
-      <button type="submit" data-ng-disabled="authform.$invalid" data-ng-click="">{{authctrl.buttonText}}</button>
-    </form>
-  </section>
-</div>
+<!-- <div class="auth-wrapper"> -->
+  <!-- <section> -->
+<form name="auth-form" data-ng-submit="authctrl.authenticate(authctrl.organization)" class="form-green auth-wrapper">
+  <h2>{{authctrl.signup ? 'Create A New Organization':'Sign in to existing Organization'}}</h2>
+  <a data-ng-href="/#/{{authctrl.signup ? 'signin':'signup'}}">{{(authctrl.signup ? 'Or Sign into an exisiting Organization':'Or Create a New Organization')}}</a>
+  <p>
+    <label for="org-name">Name:</label>
+    <input id="org-name" type="text" required data-ng-model="authctrl.organization.organizationName">
+  </p>
+  <p>
+    <label for="org-pw">Password:</label>
+    <input id="org-pw" type="password" required data-ng-model="authctrl.organization.password">
+  </p>
+  <p>
+    <label for="org-pw-conf" data-ng-if="authctrl.signup" for="confirmation">Confirmation:</label>
+    <input id="org-pw-conf" data-ng-if="authctrl.signup" type="password" required data-ng-model="authctrl.organization.confirmation">      
+  </p>
+  <p>
+    <button type="submit" data-ng-disabled="authform.$invalid" data-ng-click="">{{authctrl.buttonText}}</button>
+  </p>
+</form>
+  <!-- </section> -->
+<!-- </div> -->

@@ -1,40 +1,35 @@
 <form class="form-green">
   <h2>{{buttonText}} a Location</h2>
   <p>
-    <label for="time">Day and Time
-      <input id="time" type="text" name="day-time" data-ng-model="location.day-time">
-    </label>
+    <label for="time">Day and Time:</label>
+    <input id="time" type="text" name="day-time" data-ng-model="location.day-time">
   </p>
   <p>
-    <label for="location-name">Location
-      <input id="location-name" type="text" name="location" data-ng-model="location.location">
-    </label>
+    <label for="location-name">Location:</label>
+    <input id="location-name" type="text" name="location" data-ng-model="location.location">
   </p>
   <p>
-    <label for="meal">Meal Served
-      <input id="meal" type="text" name="meal-served" data-ng-model="location.meal-served">
-    </label>
+    <label for="meal">Meal Served:</label>
+    <input id="meal" type="text" name="meal-served" data-ng-model="location.meal-served">
   </p>
   <p>
-    <label for="program">Name of Program
-      <input id="program" type="text" name="name-of-program" data-ng-model="location.name-of-program">
-    </label>
+    <label for="program">Name of Program:</label>
+    <input id="program" type="text" name="name-of-program" data-ng-model="location.name-of-program">
   </p>
   <p>
-    <label for="people">People Served
-      <input id="people" type="text" name="people-served" data-ng-model="location.people-served">
-    </label>
+    <label for="people">People Served:</label>
+    <input id="people" type="text" name="people-served" data-ng-model="location.people-served">
   </p>
   <p>
-    <label for="zip">Zip Code
-      <input id="zip" type="text" name="zip-code" data-ng-model="location.zip-code">
-    </label>
+    <label for="zip">Zip Code:</label>
+    <input id="zip" type="text" name="zip-code" data-ng-model="location.zip-code">
   </p>
   <p>
-    <label for="open">Days Open
-      <input id="open" type="text" name="days-open" data-ng-model="location.daysOpen">
-    </label>
+    <label for="open">Days Open:</label>
+    <input id="open" type="text" name="days-open" data-ng-model="location.daysOpen">
   </p>
-  <button id="create-location" type="submit">{{buttonText}}</button>
+  <p>
+    <button id="create-location" type="submit">{{buttonText}}</button>
+  </p>
   <ng-transclude></ng-transclude>
 </form>
