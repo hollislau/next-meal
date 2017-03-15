@@ -7,12 +7,13 @@ const userRouter = require(__dirname + '/routes/user_router');
 const voiceRouter = require(__dirname + '/routes/voice_router');
 const authRouter = require(__dirname + '/routes/auth_router');
 
-app.use('/api', authRouter);
-app.use('/api', userRouter);
 app.use('/api', twilioRouter);
-app.use('/api', mealRouter);
 app.use('/voice', voiceRouter);
+app.use('/api', userRouter);
+
 app.use(express.static(__dirname + '/build'));
+app.use('/api', mealRouter);
+app.use('/api', authRouter);
 
 module.exports = exports = function(port, mongoDbUri, cb) {
   mongoose.connect(mongoDbUri);

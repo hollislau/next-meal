@@ -25,17 +25,18 @@ gulp.task('lint:server', () => {
     .pipe(eslint.failAfterError());
 });
 
+// make sure .eslintrc is being used and not just the options below are applied
 gulp.task('lint:app', () => {
   return gulp.src('app/**/*.js')
     .pipe(eslint({
-      'env': {
-        'browser': true,
-        'es6': true,
-        'commonjs': true
-      },
-      'globals': {
-        'angular': 1
-      }
+      envs: [
+        'browser',
+        'es6',
+        'commonjs'
+      ],
+      globals: [
+        'angular'
+      ]
     }))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
@@ -44,11 +45,11 @@ gulp.task('lint:app', () => {
 gulp.task('lint:test', () => {
   return gulp.src('test/unit/client/**/*.js')
   .pipe(eslint({
-    'env': {
-      'browser': true,
-      'jasmine': true,
-      'protractor': true
-    }
+    envs: [
+      'browser',
+      'jasmine',
+      'protractor'
+    ]
   }))
   .pipe(eslint.format())
   .pipe(eslint.failAfterError());

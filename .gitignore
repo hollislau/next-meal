@@ -3,6 +3,7 @@ test/bundle.js.map
 db
 build
 node_modules
+.node-version
 
 # Compiled source #
 ###################
